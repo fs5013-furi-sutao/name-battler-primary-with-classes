@@ -7,6 +7,9 @@ public class Config {
 
         public static final int MIN_LENGTH_PLAYER_NAME = 1;
         public static final int MAX_LENGTH_PLAYER_NAME = 24;
+
+        public static final int SIZE_OF_HANKAKU = 1;
+        public static final int SIZE_OF_ZENKAKU = 2;
     }
 
     public class MessageFormats {
