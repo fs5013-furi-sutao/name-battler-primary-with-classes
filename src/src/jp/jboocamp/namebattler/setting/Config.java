@@ -33,5 +33,6 @@ public class Config {
     public class MessageFormats {
         public static final String REQUIRE_INPUT_PLAYER_NAME = "プレイヤー %d の名前を入力してください: ";
         public static final String INPUT_NAME_LENGTH_RULE = "名前は半角 %d 文字以上 %d 文字までで入力してください（全角1文字は半角2文字で換算）";
+        public static final String ALL_STATUS_VALUES = "[HP:%3d], [STR:%3d], [DEF:%3d], [LUCK:%3d]";
     }
 }
