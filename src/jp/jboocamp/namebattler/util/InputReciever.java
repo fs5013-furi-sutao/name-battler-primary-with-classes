@@ -11,7 +11,14 @@ public class InputReciever {
         STDIN = new Scanner(System.in);
     }
 
-    public static String recieveInputtedStr() {
+    public static String recieveInputtedStr(String message) {
+        message += Config.Messages.WAIT_FOR_USER_INPUT_MARK;
+        Console.print(message);
+        return STDIN.nextLine();
+    }
+
+    public static String recieveInputtedStrWithoutMark(String message) {
+        Console.print(message);
         return STDIN.nextLine();
     }
 
@@ -20,8 +27,8 @@ public class InputReciever {
     }
 
     public static void recieveEnterKey() {
-        showRequirePressEnterKey();
-        String inputtedStr = recieveInputtedStr();
+        String message = Config.Messages.PRESS_ENTER_KEY;
+        String inputtedStr = recieveInputtedStrWithoutMark(message);
 
         while (inputtedStr != null) {
             if (inputtedStr.isEmpty()) {
@@ -30,14 +37,59 @@ public class InputReciever {
             }
 
             if (STDIN.hasNextLine()) {
-                inputtedStr = recieveInputtedStr();
+                inputtedStr = recieveInputtedStrWithoutMark(message);
                 continue;
             }
             inputtedStr = null;
         }
     }
 
-    private static void showRequirePressEnterKey() {
-        Console.print(Config.Messages.PRESS_ENTER_KEY);
+    public static int recieveInputtedNum(String message, int min, int max) {
+        String inputtedNumStr = recieveInputtedStr(message);
+        int inputtedNum = validateInputtedNumInRange(message, inputtedNumStr, min, max);
+        return inputtedNum;
     }
+
+    private static int validateInputtedNumInRange(String message, String str, int min, int max) {
+        if (!isNum(str)) {
+            Console.println(Config.Messages.REQUIRE_INPUT_WITH_NUM);
+            return recieveInputtedNum(message, min, max);
+        }
+
+        int inputtedNum = parseInt(str);
+
+        if (!isInRange(min, max,inputtedNum)) {
+            showRequireInputNumInRange(min, max);
+            return recieveInputtedNum(message, min, max);
+        }
+        return inputtedNum;
+    }
+
+    private static void showRequireInputNumInRange(int min, int max) {
+        String message = String.format(
+            Config.MessageFormats.REQUIRE_INPUT_NUM_IN_RANGE, 
+            min, 
+            max);
+
+        Console.println(message);
+    }
+
+    private static boolean isNum(String str) {
+        try {
+            parseInt(str);
+
+        } catch(NumberFormatException e) {
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isInRange(int min, int max, int num) {
+        return num >= min && num <= max;
+    }
+
+    private static int parseInt(String str) {
+        return Integer.parseInt(str);
+    }
+
 }

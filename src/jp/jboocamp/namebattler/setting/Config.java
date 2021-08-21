@@ -2,9 +2,11 @@ package jp.jboocamp.namebattler.setting;
 
 public class Config {
     public class Values {
+        public static final int MIN_NUM_OF_PLAYERS = 2;
+        public static final int MAX_NUM_OF_PLAYERS = 10;
+
         public static final int START_OF_TURN_COUNT = 1;
         public static final int START_OF_PLAYER_NO = 1;
-        public static final int NUM_OF_PLAYERS = 4;
 
         public static final int MIN_LENGTH_PLAYER_NAME = 1;
         public static final int MAX_LENGTH_PLAYER_NAME = 24;
@@ -37,18 +39,23 @@ public class Config {
     }
 
     public class Messages {
+        public static final String INPUT_NUM_OF_PLAYER = "対戦するプレーヤーの人数を入力してください";
+        public static final String REQUIRE_INPUT_WITH_NUM = "数字で入力してください";
         public static final String REQUIRE_INPUT_NON_DUPLICATED_NAMES = "同じ名前は使用しないでください";
         public static final String CRITICAL_HIT = "会心の一撃！";
         public static final String ATTACK_DISMISS = "攻撃をミスした";
         public static final String VICTORY = "%s の勝利！！";
         public static final String PRESS_ENTER_KEY = "<Press Enter Key>";
+        public static final String BLANK = "";
+        public static final String WAIT_FOR_USER_INPUT_MARK = ": ";
     }
 
     public class MessageFormats {
-        public static final String REQUIRE_INPUT_PLAYER_NAME = "プレイヤー %d の名前を入力してください: ";
+        public static final String REQUIRE_INPUT_NUM_IN_RANGE = "%d ～ %d の範囲で入力してください";
+        public static final String REQUIRE_INPUT_PLAYER_NAME = "プレイヤー %2d の名前を入力してください";
         public static final String INPUT_NAME_LENGTH_RULE = "名前は半角 %d 文字以上 %d 文字までで入力してください（全角1文字は半角2文字で換算）";
         public static final String TURN_LABEL = "ターン %d :==========";
-        public static final String PLAYER_NAME_IS = "プレイヤー%d: %s %s";
+        public static final String PLAYER_NAME_IS = "プレイヤー%2d: %s %s";
         public static final String ALL_STATUS_VALUES = "[HP:%3d], [STR:%3d], [DEF:%3d], [LUCK:%3d]";
         public static final String ATTACKER_ATTACK = "%s の攻撃！";
         public static final String ENEMY_RECIEVED_DAMAGE = "%s に %d のダメージ！（HP:%3d ⇒ %3d）";

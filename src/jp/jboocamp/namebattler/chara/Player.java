@@ -48,8 +48,8 @@ public class Player {
     }
 
     private String recieveUserInputtedName(Players players) {
-        showRequirePlayerName();
-        String inputtedName = InputReciever.recieveInputtedStr();
+        String requiredMessage = buildMessageForRequirePlayerName();
+        String inputtedName = InputReciever.recieveInputtedStr(requiredMessage);
         inputtedName = validateUserInputtedName(players, inputtedName);
         Console.printBalnk();
         return inputtedName;
@@ -91,21 +91,16 @@ public class Player {
         maxPlayerNo++;
     }
 
+    private String buildMessageForRequirePlayerName() {
+        return String.format(Config.MessageFormats.REQUIRE_INPUT_PLAYER_NAME,
+                this.playerNo);
+    }
+
     public void showAllStatusValues(Players players) {
         String message = String.format(Config.MessageFormats.PLAYER_NAME_IS,
                 this.playerNo, ajustNameCompareOtherPlayers(players),
                 statusStr());
         Console.println(message);
-    }
-
-    private void showRequirePlayerName() {
-        String requiredMessage = buildMessageForRequirePlayerName();
-        Console.print(requiredMessage);
-    }
-
-    private String buildMessageForRequirePlayerName() {
-        return String.format(Config.MessageFormats.REQUIRE_INPUT_PLAYER_NAME,
-                this.playerNo);
     }
 
     private void showRequireInputInDefinedLength() {
