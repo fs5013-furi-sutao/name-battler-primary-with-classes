@@ -12,6 +12,10 @@ public class Config {
         public static final int SIZE_OF_ZENKAKU = 2;
     }
 
+    public class Messages {
+        public static final String REQUIRE_INPUT_NON_DUPLICATED_NAMES = "同じ名前は使用しないでください";
+    }
+
     public class MessageFormats {
         public static final String REQUIRE_INPUT_PLAYER_NAME = "プレイヤー %d の名前を入力してください: ";
         public static final String INPUT_NAME_LENGTH_RULE = "名前は半角 %d 文字以上 %d 文字までで入力してください（全角1文字は半角2文字で換算）";

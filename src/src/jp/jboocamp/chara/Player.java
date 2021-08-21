@@ -39,6 +39,7 @@ public class Player {
         for (Player player : players.toList()) {
 
             if (player.isSameName(name)) {
+                showRequireInputNonDuplicatedNames();
                 return recieveUserInputtedName(players);
             }
         }
@@ -53,7 +54,7 @@ public class Player {
     }
 
     private boolean isSameName(String name) {
-        return false;
+        return name().equals(name);
     }
 
     private void generatePlayerNo() {
@@ -83,8 +84,16 @@ public class Player {
         Console.println(message);
     }
 
+    private void showRequireInputNonDuplicatedNames() {
+        Console.println(Config.Messages.REQUIRE_INPUT_NON_DUPLICATED_NAMES);
+    }
+
     public static Player generatePlayerWithNonDupulicatedNames(
             Players players) {
         return new Player(players);
+    }
+
+    public String name() {
+        return this.status.name();
     }
 }
