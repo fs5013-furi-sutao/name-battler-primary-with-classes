@@ -1,6 +1,6 @@
-package src.jp.jboocamp.util;
+package src.jp.jboocamp.namebattler.util;
 
-import src.jp.jboocamp.setting.Config;
+import src.jp.jboocamp.namebattler.setting.Config;
 
 public class Console {
 

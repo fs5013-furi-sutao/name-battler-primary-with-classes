@@ -1,4 +1,4 @@
-package src.jp.jboocamp.setting;
+package src.jp.jboocamp.namebattler.setting;
 
 public class Config {
     public class Values {

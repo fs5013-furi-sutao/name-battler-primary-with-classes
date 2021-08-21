@@ -1,4 +1,4 @@
-package src.jp.jboocamp.util;
+package src.jp.jboocamp.namebattler.util;
 
 import java.util.Scanner;
 

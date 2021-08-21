@@ -1,10 +1,10 @@
-package src.jp.jboocamp.chara;
+package src.jp.jboocamp.namebattler.chara;
 
-import src.jp.jboocamp.setting.Config;
-import src.jp.jboocamp.status.Damage;
-import src.jp.jboocamp.status.Status;
-import src.jp.jboocamp.util.Console;
-import src.jp.jboocamp.util.InputReciever;
+import src.jp.jboocamp.namebattler.setting.Config;
+import src.jp.jboocamp.namebattler.status.Damage;
+import src.jp.jboocamp.namebattler.status.Status;
+import src.jp.jboocamp.namebattler.util.Console;
+import src.jp.jboocamp.namebattler.util.InputReciever;
 
 public class Player {
     private static int maxPlayerNo;

@@ -1,4 +1,4 @@
-package src.jp.jboocamp.status;
+package src.jp.jboocamp.namebattler.status;
 
 public class TurnCounter {
 

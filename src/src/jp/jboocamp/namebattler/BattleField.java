@@ -1,7 +1,7 @@
 package src.jp.jboocamp.namebattler;
 
-import src.jp.jboocamp.chara.Players;
-import src.jp.jboocamp.status.TurnCounter;
+import src.jp.jboocamp.namebattler.chara.Players;
+import src.jp.jboocamp.namebattler.status.TurnCounter;
 
 public class BattleField {
     private Players players;
