@@ -1,7 +1,7 @@
-package src.jp.jboocamp.namebattler;
+package jp.jboocamp.namebattler;
 
-import src.jp.jboocamp.namebattler.setting.Config;
-import src.jp.jboocamp.namebattler.util.InputReciever;
+import jp.jboocamp.namebattler.setting.Config;
+import jp.jboocamp.namebattler.util.InputReciever;
 
 public class App {
     private static final int NUM_OF_PLAYERS = Config.Values.NUM_OF_PLAYERS;

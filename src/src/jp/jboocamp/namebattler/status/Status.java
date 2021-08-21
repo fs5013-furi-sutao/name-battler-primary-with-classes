@@ -1,4 +1,4 @@
-package src.jp.jboocamp.namebattler.status;
+package jp.jboocamp.namebattler.status;
 
 public class Status {
     private String name;

@@ -1,4 +1,4 @@
-package src.jp.jboocamp.namebattler.setting;
+package jp.jboocamp.namebattler.setting;
 
 public class Config {
     public class Values {
@@ -10,6 +10,10 @@ public class Config {
 
         public static final int SIZE_OF_HANKAKU = 1;
         public static final int SIZE_OF_ZENKAKU = 2;
+
+        public static final int HEX = 16;
+        public static final int HASH_CHUNK_LENGTH = 2;
+        public static final int MAX_HASH_VALUE = 255;
     }
 
     public class Messages {

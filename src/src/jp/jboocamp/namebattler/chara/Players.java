@@ -1,4 +1,4 @@
-package src.jp.jboocamp.namebattler.chara;
+package jp.jboocamp.namebattler.chara;
 
 import java.util.ArrayList;
 import java.util.List;
