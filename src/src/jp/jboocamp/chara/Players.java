@@ -25,4 +25,24 @@ public class Players {
     public List<Player> toList() {
         return this.members;
     }
+
+    public boolean isLiverOnlyOne() {
+        return false;
+    }
+
+    public void showAllPlayersAllStatusValues() {
+    }
+
+    public void shuffle() {
+    }
+
+    public void battleEach() {
+    }
+
+    public Players sortAsc() {
+        return null;
+    }
+
+    public void showVictoryPlayer() {
+    }
 }

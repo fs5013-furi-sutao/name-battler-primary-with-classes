@@ -1,6 +1,7 @@
 package src.jp.jboocamp.namebattler;
 
 import src.jp.jboocamp.chara.Players;
+import src.jp.jboocamp.status.TurnCounter;
 
 public class BattleField {
     private Players players;
@@ -10,6 +11,15 @@ public class BattleField {
     }
 
     public void battle() {
+        while (!this.players.isLiverOnlyOne()) {
+            TurnCounter.showTurn();
+            this.players.showAllPlayersAllStatusValues();
+            this.players.shuffle();
+            this.players.battleEach();
+            this.players = this.players.sortAsc();
+            TurnCounter.countUp();
+        }
+        this.players.showVictoryPlayer();
+        this.players.showAllPlayersAllStatusValues();
     }
-
 }
