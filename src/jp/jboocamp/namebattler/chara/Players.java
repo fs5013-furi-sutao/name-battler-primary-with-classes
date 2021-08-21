@@ -46,6 +46,7 @@ public class Players {
         for (Player player : this.members) {
             player.showAllStatusValues(this);
         }
+        Console.printBalnk();
     }
 
     public void shuffle() {

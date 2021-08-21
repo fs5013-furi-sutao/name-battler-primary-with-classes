@@ -32,6 +32,8 @@ public class Config {
 
         public static final int LUK_FULL_RANGE = 300;
         public static final int ADJUST_VALUE_FOR_CRITICAL_HIT = 10;
+
+        public static final int SLOW_CONSOLE_WAIT_TIME = 10;
     }
 
     public class Messages {

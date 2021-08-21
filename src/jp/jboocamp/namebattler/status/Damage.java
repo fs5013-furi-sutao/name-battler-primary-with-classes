@@ -68,7 +68,7 @@ public class Damage {
                 Config.MessageFormats.ENEMY_RECIEVED_DAMAGE, this.enemy.name(),
                 this.value, this.enemy.previousHpValue(), this.enemy.hpValue());
 
-        Console.println(message);
+        Console.printlnSlow(message);
     }
 
     public void defineEnemy(Player enemy) {
