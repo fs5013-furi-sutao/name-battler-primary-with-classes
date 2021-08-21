@@ -4,8 +4,16 @@ import src.jp.jboocamp.setting.Config;
 
 public class Console {
 
-    public static void println(String message) {
+    public static void print(String message) {
         System.out.print(message);
+    }
+
+    public static void println(String message) {
+        System.out.println(message);
+    }
+
+    public static void printBalnk() {
+        System.out.println();
     }
 
     /**
