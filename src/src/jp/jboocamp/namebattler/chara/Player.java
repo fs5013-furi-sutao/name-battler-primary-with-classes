@@ -21,7 +21,7 @@ public class Player {
         generatePlayerNo();
         String name = recieveUserInputtedName(players);
         this.status = new Status(name);
-        this.damage = new Damage();
+        this.damage = new Damage(this);
     }
 
     private String recieveUserInputtedName(Players players) {

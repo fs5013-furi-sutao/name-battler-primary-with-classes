@@ -25,10 +25,19 @@ public class Config {
         public static final double STR_LIFT_VALUE = 20;
         public static final double DEF_CALC_BASE = 50;
         public static final double LUK_CALC_BASE = 100;
+
+        public static final int RANDOM_SEED_DAMAGE = 5;
+        public static final double RATE_LIFT_VALUE_FOR_DAMAGE = 0.6;
+        public static final double LOSS_RATE_FOR_DAMAGE = 0.1;
+
+        public static final int LUK_FULL_RANGE = 300;
+        public static final int ADJUST_VALUE_FOR_CRITICAL_HIT = 10;
     }
 
     public class Messages {
         public static final String REQUIRE_INPUT_NON_DUPLICATED_NAMES = "同じ名前は使用しないでください";
+        public static final String CRITICAL_HIT = "会心の一撃！";
+        public static final String ATTACK_DISMISS = "攻撃をミスした";
     }
 
     public class MessageFormats {
@@ -37,5 +46,7 @@ public class Config {
         public static final String TURN_LABEL = "ターン %d :==========";
         public static final String PLAYER_NAME_IS = "プレイヤー%d: %s %s";
         public static final String ALL_STATUS_VALUES = "[HP:%3d], [STR:%3d], [DEF:%3d], [LUCK:%3d]";
+        public static final String ENEMY_RECIEVED_DAMAGE = "%s に %d のダメージ！（HP:%3d ⇒ %3d）";
+        public static final String ENEMY_IS_DIE = "%s は力尽きた...";
     }
 }
