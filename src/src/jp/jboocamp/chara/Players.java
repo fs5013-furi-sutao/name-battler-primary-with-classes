@@ -19,4 +19,8 @@ public class Players {
                     .add(Player.generatePlayerWithNonDupulicatedNames(this));
         }
     }
+
+    public List<Player> toList() {
+        return this.members;
+    }
 }

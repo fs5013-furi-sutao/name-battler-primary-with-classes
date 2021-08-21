@@ -8,5 +8,6 @@ public class App {
     public static void main(String[] args) {
         BattleField field = new BattleField(NUM_OF_PLAYERS);
         field.battle();
+        InputReciever.shutDown();
     }
 }

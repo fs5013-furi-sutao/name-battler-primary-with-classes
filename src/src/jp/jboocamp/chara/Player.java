@@ -17,15 +17,38 @@ public class Player {
 
     public Player(Players players) {
         generatePlayerNo();
-        String name = recieveUserInputtedName();
+        String name = recieveUserInputtedName(players);
         this.status = new Status(name);
         this.damage = new Damage();
     }
 
-    private String recieveUserInputtedName() {
+    private String recieveUserInputtedName(Players players) {
         showRequirePlayerName();
-        String inputtedName = InputReciever.revcieveInputtedStr();
+        String inputtedName = InputReciever.recieveInputtedStr();
+        inputtedName = validateUserInputtedName(players, inputtedName);
         return inputtedName;
+    }
+
+    private String validateUserInputtedName(Players players, String name) {
+        if (!isLengthInRange(name)) {
+            return recieveUserInputtedName(players);
+        }
+
+        for (Player player : players.toList()) {
+
+            if (player.isSameName(name)) {
+                return recieveUserInputtedName(players);
+            }
+        }
+        return name;
+    }
+
+    private boolean isLengthInRange(String name) {
+        return false;
+    }
+
+    private boolean isSameName(String name) {
+        return false;
     }
 
     private void generatePlayerNo() {

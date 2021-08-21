@@ -1,9 +1,19 @@
 package src.jp.jboocamp.util;
 
-public class InputReciever {
+import java.util.Scanner;
 
-    public static String revcieveInputtedStr() {
-        return null;
+public class InputReciever {
+    private static final Scanner STDIN;
+
+    static {
+        STDIN = new Scanner(System.in);
     }
 
+    public static String recieveInputtedStr() {
+        return STDIN.nextLine();
+    }
+
+    public static void shutDown() {
+        STDIN.close();
+    }
 }
