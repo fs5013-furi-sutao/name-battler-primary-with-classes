@@ -46,6 +46,7 @@ public class Config {
         public static final String TURN_LABEL = "ターン %d :==========";
         public static final String PLAYER_NAME_IS = "プレイヤー%d: %s %s";
         public static final String ALL_STATUS_VALUES = "[HP:%3d], [STR:%3d], [DEF:%3d], [LUCK:%3d]";
+        public static final String ATTACKER_ATTACK = "%s の攻撃！";
         public static final String ENEMY_RECIEVED_DAMAGE = "%s に %d のダメージ！（HP:%3d ⇒ %3d）";
         public static final String ENEMY_IS_DIE = "%s は力尽きた...";
     }

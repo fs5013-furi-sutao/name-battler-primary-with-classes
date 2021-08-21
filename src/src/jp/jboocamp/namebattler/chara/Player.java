@@ -24,6 +24,29 @@ public class Player {
         this.damage = new Damage(this);
     }
 
+    public void attack() {
+        showAttackAction();
+        this.damage.calc();
+        this.damage.reflect();
+        this.damage.showInCaseCritialHit();
+        this.damage.showInCaseAttackDissmiss();
+        this.damage.showDamage();
+        this.damage.enemy().updateIsLive();
+        this.damage.initIsCriticalhit();
+        this.damage.runInCaseDead();
+        Console.printBalnk();
+    }
+
+    public void encountEnemy(Players players) {
+
+        Player enemy = players.pickOnlyLivePlayers().pickEnemy();
+        this.damage.defineEnemy(enemy);
+
+        if (enemy.equals(this)) {
+            encountEnemy(players);
+        }
+    }
+
     private String recieveUserInputtedName(Players players) {
         showRequirePlayerName();
         String inputtedName = InputReciever.recieveInputtedStr();
@@ -94,6 +117,12 @@ public class Player {
 
     private void showRequireInputNonDuplicatedNames() {
         Console.println(Config.Messages.REQUIRE_INPUT_NON_DUPLICATED_NAMES);
+    }
+
+    public void showAttackAction() {
+        String message = String.format(Config.MessageFormats.ATTACKER_ATTACK,
+                name());
+        Console.println(message);
     }
 
     public static Player generatePlayerWithNonDupulicatedNames(
