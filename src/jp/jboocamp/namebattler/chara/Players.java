@@ -2,8 +2,13 @@ package jp.jboocamp.namebattler.chara;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
+
+import jp.jboocamp.namebattler.setting.Config;
+import jp.jboocamp.namebattler.util.Console;
 
 public class Players {
     private static final Random RANDOM;
@@ -20,6 +25,10 @@ public class Players {
     public Players(int numOfPlayers) {
         this();
         collectAsMuchAsNeed(numOfPlayers);
+    }
+
+    public Players(List<Player> players) {
+        this.members = players;
     }
 
     private void collectAsMuchAsNeed(int numOfPlayers) {
@@ -91,10 +100,21 @@ public class Players {
     }
 
     public Players sortAsc() {
-        return null;
+        this.members = this.members.stream()
+                .sorted(Comparator.comparing(Player::playerNo))
+                .collect(Collectors.toList());
+        return new Players(this.members);
     }
 
     public void showVictoryPlayer() {
+        for (Player player : this.members) {
+
+            if (player.isLive()) {
+                String message = String.format(Config.Messages.VICTORY,
+                        player.name());
+                Console.println(message);
+            }
+        }
     }
 
     public int longestLengthName() {
