@@ -39,6 +39,7 @@ public class Config {
         public static final String CRITICAL_HIT = "会心の一撃！";
         public static final String ATTACK_DISMISS = "攻撃をミスした";
         public static final String VICTORY = "%s の勝利！！";
+        public static final String PRESS_ENTER_KEY = "<Press Enter Key>";
     }
 
     public class MessageFormats {

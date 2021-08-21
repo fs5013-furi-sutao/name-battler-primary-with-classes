@@ -2,6 +2,7 @@ package jp.jboocamp.namebattler;
 
 import jp.jboocamp.namebattler.chara.Players;
 import jp.jboocamp.namebattler.status.TurnCounter;
+import jp.jboocamp.namebattler.util.InputReciever;
 
 public class BattleField {
     private Players players;
@@ -17,6 +18,7 @@ public class BattleField {
             this.players.shuffle();
             this.players.battleEach();
             this.players = this.players.sortAsc();
+            InputReciever.recieveEnterKey();
             TurnCounter.countUp();
         }
         this.players.showVictoryPlayer();
