@@ -14,5 +14,9 @@ public class Players {
     }
 
     private void collectAsMuchAsNeed(int numOfPlayers) {
+        for (int i = 0; i < numOfPlayers; i++) {
+            this.members
+                    .add(Player.generatePlayerWithNonDupulicatedNames(this));
+        }
     }
 }

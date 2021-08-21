@@ -15,7 +15,7 @@ public class Player {
         maxPlayerNo = Config.Values.START_OF_PLAYER_NO;
     }
 
-    public Player() {
+    public Player(Players players) {
         generatePlayerNo();
         String name = recieveUserInputtedName();
         this.status = new Status(name);
@@ -39,5 +39,10 @@ public class Player {
     }
 
     private void showRequirePlayerName() {
+    }
+
+    public static Player generatePlayerWithNonDupulicatedNames(
+            Players players) {
+        return new Player(players);
     }
 }
