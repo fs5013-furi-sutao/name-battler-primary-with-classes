@@ -1,9 +1,9 @@
-package jp.boocamp.namebattler.util;
+package jp.jboocamp.namebattler.util;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
-import src.jp.jboocamp.namebattler.setting.Config;
+import jp.jboocamp.namebattler.setting.Config;
 
 public class ValueGenerator {
     public static final int MAX_HASH_VALUE = Config.Values.MAX_HASH_VALUE;
