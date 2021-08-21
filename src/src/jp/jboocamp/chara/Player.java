@@ -3,6 +3,7 @@ package src.jp.jboocamp.chara;
 import src.jp.jboocamp.setting.Config;
 import src.jp.jboocamp.status.Damage;
 import src.jp.jboocamp.status.Status;
+import src.jp.jboocamp.util.Console;
 import src.jp.jboocamp.util.InputReciever;
 
 public class Player {
@@ -31,6 +32,7 @@ public class Player {
 
     private String validateUserInputtedName(Players players, String name) {
         if (!isLengthInRange(name)) {
+            showRequireInputInDefinedLength();
             return recieveUserInputtedName(players);
         }
 
@@ -44,7 +46,10 @@ public class Player {
     }
 
     private boolean isLengthInRange(String name) {
-        return false;
+        int min = Config.Values.MIN_LENGTH_PLAYER_NAME;
+        int max = Config.Values.MAX_LENGTH_PLAYER_NAME;
+        int countChara = Console.getHan1Zen2(name);
+        return countChara >= min && countChara <= max;
     }
 
     private boolean isSameName(String name) {
@@ -62,6 +67,14 @@ public class Player {
     }
 
     private void showRequirePlayerName() {
+    }
+
+    private void showRequireInputInDefinedLength() {
+        int min = Config.Values.MIN_LENGTH_PLAYER_NAME;
+        int max = Config.Values.MAX_LENGTH_PLAYER_NAME;
+        String message = String
+                .format(Config.MessageFormats.INPUT_NAME_LENGTH_RULE, min, max);
+        Console.println(message);
     }
 
     public static Player generatePlayerWithNonDupulicatedNames(
