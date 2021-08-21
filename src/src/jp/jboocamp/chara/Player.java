@@ -3,6 +3,7 @@ package src.jp.jboocamp.chara;
 import src.jp.jboocamp.setting.Config;
 import src.jp.jboocamp.status.Damage;
 import src.jp.jboocamp.status.Status;
+import src.jp.jboocamp.util.InputReciever;
 
 public class Player {
     private static int maxPlayerNo;
@@ -22,7 +23,9 @@ public class Player {
     }
 
     private String recieveUserInputtedName() {
-        return null;
+        showRequirePlayerName();
+        String inputtedName = InputReciever.revcieveInputtedStr();
+        return inputtedName;
     }
 
     private void generatePlayerNo() {
@@ -33,5 +36,8 @@ public class Player {
     private void incrementPlayerNo() {
         maxPlayerNo++;
 
+    }
+
+    private void showRequirePlayerName() {
     }
 }
