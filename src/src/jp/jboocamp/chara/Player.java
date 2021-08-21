@@ -63,10 +63,16 @@ public class Player {
 
     private void incrementPlayerNo() {
         maxPlayerNo++;
-
     }
 
     private void showRequirePlayerName() {
+        String requiredMessage = buildMessageForRequirePlayerName();
+        Console.print(requiredMessage);
+    }
+
+    private String buildMessageForRequirePlayerName() {
+        return String.format(Config.MessageFormats.REQUIRE_INPUT_PLAYER_NAME,
+                this.playerNo);
     }
 
     private void showRequireInputInDefinedLength() {
