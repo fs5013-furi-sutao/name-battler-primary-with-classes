@@ -51,6 +51,7 @@ public class Player {
         showRequirePlayerName();
         String inputtedName = InputReciever.recieveInputtedStr();
         inputtedName = validateUserInputtedName(players, inputtedName);
+        Console.printBalnk();
         return inputtedName;
     }
 
