@@ -31,6 +31,9 @@ public class Players {
     }
 
     public void showAllPlayersAllStatusValues() {
+        for (Player player : this.members) {
+            player.showAllStatusValues(this);
+        }
     }
 
     public void shuffle() {
@@ -44,5 +47,16 @@ public class Players {
     }
 
     public void showVictoryPlayer() {
+    }
+
+    public int longestLengthName() {
+        int longestLengh = 0;
+        for (Player player : this.members) {
+            int length = player.name().length();
+            if (length > longestLengh) {
+                longestLengh = length;
+            }
+        }
+        return longestLengh;
     }
 }

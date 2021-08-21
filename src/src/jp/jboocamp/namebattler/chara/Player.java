@@ -3,6 +3,7 @@ package jp.jboocamp.namebattler.chara;
 import jp.jboocamp.namebattler.setting.Config;
 import jp.jboocamp.namebattler.status.Damage;
 import jp.jboocamp.namebattler.status.Status;
+import jp.jboocamp.namebattler.status.value.Hp;
 import jp.jboocamp.namebattler.util.Console;
 import jp.jboocamp.namebattler.util.InputReciever;
 
@@ -66,6 +67,13 @@ public class Player {
         maxPlayerNo++;
     }
 
+    public void showAllStatusValues(Players players) {
+        String message = String.format(Config.MessageFormats.PLAYER_NAME_IS,
+                this.playerNo, ajustNameCompareOtherPlayers(players),
+                statusStr());
+        Console.println(message);
+    }
+
     private void showRequirePlayerName() {
         String requiredMessage = buildMessageForRequirePlayerName();
         Console.print(requiredMessage);
@@ -93,7 +101,58 @@ public class Player {
         return new Player(players);
     }
 
+    private String ajustNameCompareOtherPlayers(Players players) {
+        int longestLengthName = players.longestLengthName();
+        return Console.adjustWidth(name(), longestLengthName * 2);
+    }
+
+    public String statusStr() {
+        return this.status.valuesStr();
+    }
+
+    public int playerNo() {
+        return this.playerNo;
+    }
+
     public String name() {
         return this.status.name();
+    }
+
+    public boolean isLive() {
+        return this.status.isLive();
+    }
+
+    private void updateIsLive() {
+        if (hp().isDead()) {
+            this.status.toDeath();
+        }
+    }
+
+    public Hp hp() {
+        return this.status.hp();
+    }
+
+    public int hpValue() {
+        return this.status.hpValue();
+    }
+
+    public int previousHpValue() {
+        return this.status.previousHpValue();
+    }
+
+    public int previousHp() {
+        return this.status.previousHp();
+    }
+
+    public int strValue() {
+        return this.status.strValue();
+    }
+
+    public int defValue() {
+        return this.status.defValue();
+    }
+
+    public int lukValue() {
+        return this.status.luckValue();
     }
 }

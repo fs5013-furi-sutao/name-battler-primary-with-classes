@@ -1,5 +1,7 @@
 package jp.jboocamp.namebattler.util;
 
+import java.nio.charset.Charset;
+
 import jp.jboocamp.namebattler.setting.Config;
 
 public class Console {
@@ -34,5 +36,15 @@ public class Console {
             ret += Config.Values.SIZE_OF_ZENKAKU;
         }
         return ret;
+    }
+
+    private static int getByteLength(String string, Charset charset) {
+        return string.getBytes(charset).length;
+    }
+
+    public static String adjustWidth(String target, int length) {
+        int byteDiff = (getByteLength(target, Charset.forName("UTF-8"))
+                - target.length()) / 2;
+        return String.format("%-" + (length - byteDiff + 1) + "s", target);
     }
 }
