@@ -14,6 +14,16 @@ public class Config {
         public static final int HEX = 16;
         public static final int HASH_CHUNK_LENGTH = 2;
         public static final int MAX_HASH_VALUE = 255;
+
+        public static final int INDEX_FOR_HP = 0;
+        public static final int INDEX_FOR_STR = 1;
+        public static final int INDEX_FOR_DEF = 2;
+        public static final int INDEX_FOR_LUK = 3;
+
+        public static final double STR_CALC_BASE = 80;
+        public static final double STR_LIFT_VALUE = 20;
+        public static final double DEF_CALC_BASE = 50;
+        public static final double LUK_CALC_BASE = 100;
     }
 
     public class Messages {
